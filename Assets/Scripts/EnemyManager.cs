@@ -53,9 +53,6 @@ public class EnemyManager : MonoBehaviour
     void PursuePlayer()
     {
         enemyRB.AddForce((playerContoler.transform.position - transform.position).normalized * enemySpeed * Time.fixedDeltaTime);
-        //transform.LookAt( new Vector3(playerContoler.transform.position.x, transform.position.y, playerContoler.transform.position.z));
-        //transform.rotation = Quaternion.LookRotation(playerContoler.transform.position);
-        //transform.rotation = Vector2.MoveTowards()
         transform.rotation = Quaternion.FromToRotation(Vector3.up, playerContoler.transform.position - transform.position);
     }
 

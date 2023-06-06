@@ -45,7 +45,6 @@ public class PlayerContoler : MonoBehaviour
         playerRB= GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         MouseCheck();
@@ -74,25 +73,14 @@ public class PlayerContoler : MonoBehaviour
         {
             Dash();
         }
-        //if (mousePos.magnitude > 50f)
-        //{
-        //    playerRB.velocity = (mousePos.normalized * playerSpeed * Time.fixedDeltaTime);
-        //}
     }
 
     void MouseCheck()
     {
-        //print(Input.mousePosition);
-        //print("mousepos : " + mousePos.normalized.magnitude);
-        //print(playerRB.velocity.magnitude);
         mousePos = Input.mousePosition - new Vector3(Screen.width/2, Screen.height/2, 0f);               
     }
     void Dash()
     {
-        //if(Input.GetMouseButtonDown(0))
-        //{
-        //    playerRB.AddForce(mousePos.normalized * playerSpeed * 10);
-        //}
         if (isDash && dashTime>Time.timeSinceLevelLoad) 
         {
             dashTime-= Time.fixedDeltaTime;
@@ -102,7 +90,7 @@ public class PlayerContoler : MonoBehaviour
         else if (dashTime <= Time.timeSinceLevelLoad)
         {
             isDash = false;
-            dashTime += dashCoolDown;  // bu 2 saniye olarak, cooldown gibi kullanýlýyor. MousekeyDown(0) check edilirken bir yandan da cooldown bitmiþ mi ona bakýlýyor. 
+            dashTime += dashCoolDown;
         }
     }
     void DotEat()
@@ -124,22 +112,12 @@ public class PlayerContoler : MonoBehaviour
     {
         dotColliderArray = Physics.OverlapSphere(transform.position, 12f, dotLayer);
         MiniMap.instance.MapPointUploader(dotColliderArray, transform);
-
-        //if (dotColliderArray.Length > 0)
-        //{
-        //    for (int i = 0; i < dotColliderArray.Length-1; i++)
-        //    {
-        //        print(dotColliderArray[i].transform.position-transform.position);
-        //        print(dotColliderArray[i].gameObject.GetInstanceID());
-        //    }
-        //}
     }
 
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.CompareTag("Dot"))
         {
-            //Destroy(collision.gameObject);
             ObjectPool.ýnstance.AddQueue("dotpool", collision.gameObject);
             DotEat();
             EatSound.Play();

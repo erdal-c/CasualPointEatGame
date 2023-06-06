@@ -28,48 +28,13 @@ public class MiniMap : MonoBehaviour
 
         mapRectTransform = mapPanel.GetComponent<RectTransform>();
         pointRectTransform = mapPoint.GetComponent<RectTransform>();
-        //pool = FindObjectOfType<ObjectPool>();
+
         MapPointCreator();
 
-        //print(mapRectTransform.rect.size);
-        //print(mapRectTransform.rect.position);
-        //print(mapRectTransform.rect.center);
-        //print(mapRectTransform.rect.min);
-        //print(mapRectTransform.rect.max);
-        //print(mapRectTransform.rect.x + " - " + mapRectTransform.rect.y);
-        //print(mapRectTransform.rect.xMin + " + " + mapRectTransform.rect.xMax);
-        //print(mapRectTransform.offsetMax + " offset " + mapRectTransform.offsetMin);
-        //print("\t");
-
-        //print(mapRectTransform.position + " mapRect " + mapRectTransform.localPosition);   //*
-        //print(mapPanel.transform.position + " mapPanel " + mapPanel.transform.localPosition); //*
-        //print("\t");
-
-        //print(mapPoint.transform.position + " point " + mapPoint.transform.localPosition);
-        //print(pointRectTransform.rect.position+ " pointrect " + mapPoint.transform.position);
-        //print(pointRectTransform.position + " pointrectTrasnform " + pointRectTransform.localPosition);
-
-
         pointConfirm.transform.position = pointRectTransform.rect.position;
-
-        //mapSpawnPoint = mapPointParent.transform.position + new Vector3(100, 100, 0);
-        //mapSpawnPoint = mapPoint.transform.position + new Vector3(10,10,0);
-
         float spawnPointX = pointRectTransform.localPosition.x + 3.4f;
         float spawnPointY = pointRectTransform.localPosition.y + 3.4f;
         mapSpawnPoint = new Vector3(spawnPointX, spawnPointY, 0);
-
-        //pointinstance = Instantiate(mapPoint, mapSpawnPoint, Quaternion.identity, mapPanel.transform);
-        //pointinstance = Instantiate(mapPoint, mapPanel.transform);
-
-        //print(pointinstance.transform.position + " instancePoint " + pointinstance.transform.localPosition + "    " + mapSpawnPoint);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //pointinstance.transform.position = mapSpawnPoint;
-        //pointinstance.transform.localPosition = mapSpawnPoint;
 
     }
 

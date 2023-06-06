@@ -19,13 +19,6 @@ public class LevelUpManager : MonoBehaviour
         enemyParent = GameObject.Find("EnemyParent");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //print(EnemyManager.instance.gameObject.name);
-
-    }
-
     public void PlayerSpeedUp()
     {
         playerContoler.PlayerSpeedProperty += 100;

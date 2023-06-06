@@ -42,9 +42,6 @@ public class UIManager : MonoBehaviour
 
     public AudioSource SelectBipSound;
 
-    //public Button MenuReturnButton;
-    //public Button MainMenuButton;
-
     float x, y;
     bool randomized = true;
     bool isAlphaHigh = true;
@@ -70,7 +67,6 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //health.text = "Health : " + player.playerHealth;
         if(Input.GetMouseButtonDown(1)) 
         {
             MenuOpen();
@@ -151,20 +147,6 @@ public class UIManager : MonoBehaviour
                 expSlider.value = 0;
             }
         }
-
-        //if (expSlider.value + 0.01f < currentValue)
-        //{
-        //    expSlider.value += Time.deltaTime * 5;
-        //}
-        //else if (expSlider.value > currentValue)
-        //{
-        //    expSlider.value += Time.deltaTime * 5;
-        //    if (expSlider.value == expSlider.maxValue)
-        //    {
-        //        expSlider.maxValue = maxValue;
-        //        expSlider.value = 0;
-        //    }
-        //}
     }
 
     void LevelUpMenuOpen()
@@ -260,25 +242,6 @@ public class UIManager : MonoBehaviour
 
         randomized = false;
     }
-
-    //void ButtonNameSet(int a)
-    //{
-    //    switch (a)
-    //    {
-    //        case 1:
-    //            button1Text.text = "Health Up";
-    //            break;
-    //        case 2:
-    //            button1Text.text = "Speed Up";
-    //            break;
-    //        case 3:
-    //            button1Text.text = "Dash Power";
-    //            break;
-    //        case 4:
-    //            button1Text.text = "Dash Limit";
-    //            break;
-    //    }
-    //}
 
     public void ButtonClicked1()
     {

@@ -29,10 +29,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //DotCreater();
         DotRepositioner();
         DistantDot();
         DistantEnemy();
@@ -58,7 +56,7 @@ public class GameManager : MonoBehaviour
         
         if(ObjectPool.ýnstance.dotPoolQueue.Count > 0) 
         {
-            ObjectPool.ýnstance.RemoveQueue("dotpool").transform.position = spawnArea;  //RemoveQueue Gameobject return ediyor. bu yüzden doðrudan .tranform.position kullanabiliyoruz. 
+            ObjectPool.ýnstance.RemoveQueue("dotpool").transform.position = spawnArea;
         }
     }
 
@@ -151,10 +149,5 @@ public class GameManager : MonoBehaviour
             EnemyReposioner();
         }
 
-    }
-
-    private void OnDrawGizmos()
-    {
-        //Gizmos.DrawWireSphere(playerContoler.transform.position,)
     }
 }

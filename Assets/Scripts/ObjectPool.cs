@@ -20,12 +20,6 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void AddQueue(string queueName,GameObject gameobject)
     {
         if(queueName == "dotpool")
@@ -69,10 +63,5 @@ public class ObjectPool : MonoBehaviour
 
             return gameobject;
         }
-    }
-
-    public void PrintSomething()
-    {
-        print("dafsdfasdf");
     }
 }
